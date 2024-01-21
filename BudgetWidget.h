@@ -18,6 +18,9 @@ public:
 
     void setModel(BudgetDataModel* model);
 
+private slots:
+    void slot_onBudgetModelUpdated();
+
 private:
     Ui::BudgetWidget *ui;
 };

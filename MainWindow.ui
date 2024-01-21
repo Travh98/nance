@@ -13,6 +13,18 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+color: rgb(225, 225, 225);
+background-color: rgb(21, 21, 21);
+}
+QTabBar::tab
+{
+color: rgb(225, 225, 225);
+background-color: rgb(25, 25, 25);
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>

@@ -2,27 +2,29 @@
 #define BUDGETDATAMODEL_H
 
 #include <QAbstractTableModel>
+#include <QColor>
 
 class BudgetDataModel : public QAbstractTableModel
 {
     Q_OBJECT
 
-    enum Column: int
+    enum ColEnum: int
     {
-        Category,
         Amount,
         numColumns
     };
 
-    enum Row: int
+    enum RowEnum: int
     {
         HourlyPay,
         HoursPerWeek,
         WeeksPerYear,
         GrossSalary,
+        Contrib401kPercent,
         Contrib401k,
         AnnualHealthInsurance,
         TaxableIncome,
+        AnnualTaxPercent,
         AnnualTax,
         AnnualTakeHome,
         MonthlyTakeHome,
@@ -32,25 +34,26 @@ class BudgetDataModel : public QAbstractTableModel
 public:
     explicit BudgetDataModel(QObject *parent = nullptr);
 
-    // Header:
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
     bool setHeaderData(int section, Qt::Orientation orientation, const QVariant &value, int role = Qt::EditRole) override;
 
-    // Basic functionality:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
-    // Editable:
     bool setData(const QModelIndex &index, const QVariant &value,
                  int role = Qt::EditRole) override;
 
     Qt::ItemFlags flags(const QModelIndex& index) const override;
 
 private:
-    QMap<Row, float> m_BudgetData;
+    QMap<RowEnum, float> m_BudgetData;
+
+    QColor m_tableBackgroundColor = QColor(25, 25, 25);
+
+    void recalculateValues();
 };
 
 #endif // BUDGETDATAMODEL_H
