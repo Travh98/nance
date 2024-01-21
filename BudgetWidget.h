@@ -7,6 +7,7 @@ namespace Ui {
 class BudgetWidget;
 }
 class BudgetDataModel;
+class UserExpensesModel;
 
 class BudgetWidget : public QWidget
 {
@@ -16,7 +17,9 @@ public:
     explicit BudgetWidget(QWidget *parent = nullptr);
     ~BudgetWidget();
 
-    void setModel(BudgetDataModel* model);
+    void setBudgetModel(BudgetDataModel* model);
+    void setNeedsModel(UserExpensesModel* model);
+    void setWantsModel(UserExpensesModel* model);
 
 private slots:
     void slot_onBudgetModelUpdated();

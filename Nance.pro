@@ -11,13 +11,15 @@ CONFIG += c++17
 SOURCES += \
     BudgetDataModel.cpp \
     BudgetWidget.cpp \
+    UserExpensesModel.cpp \
     main.cpp \
     MainWindow.cpp
 
 HEADERS += \
     BudgetDataModel.h \
     BudgetWidget.h \
-    MainWindow.h
+    MainWindow.h \
+    UserExpensesModel.h
 
 FORMS += \
     BudgetWidget.ui \

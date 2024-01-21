@@ -162,6 +162,7 @@ QVariant BudgetDataModel::data(const QModelIndex &index, int role) const
         }
     }
     case Qt::BackgroundRole:
+    {
         if(flags(index) & Qt::ItemIsEditable)
         {
             return m_tableBackgroundColor.lighter();
@@ -170,6 +171,7 @@ QVariant BudgetDataModel::data(const QModelIndex &index, int role) const
         {
             return m_tableBackgroundColor;
         }
+    }
     case Qt::TextAlignmentRole:
         return Qt::AlignmentFlag::AlignRight;
     }

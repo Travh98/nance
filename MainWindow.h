@@ -9,6 +9,7 @@ QT_END_NAMESPACE
 
 class BudgetWidget;
 class BudgetDataModel;
+class UserExpensesModel;
 
 class MainWindow : public QMainWindow
 {
@@ -20,7 +21,13 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    // Budgeting
     BudgetWidget* m_pBudgetWidget;
     BudgetDataModel* m_pBudgetModel;
+    UserExpensesModel* m_pNeedsModel;
+    UserExpensesModel* m_pWantsModel;
+
+
 };
 #endif // MAINWINDOW_H
