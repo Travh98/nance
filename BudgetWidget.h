@@ -23,9 +23,11 @@ public:
 
 private slots:
     void slot_onBudgetModelUpdated();
+    void slot_updateMonthlyWantsNeeds();
 
 private:
     Ui::BudgetWidget *ui;
+    BudgetDataModel* m_pBudgetModel;
 };
 
 #endif // BUDGETWIDGET_H

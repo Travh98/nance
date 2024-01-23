@@ -107,7 +107,7 @@ color: rgb(225, 225, 225);
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox">
+        <widget class="QComboBox" name="comboBox_percentForNeeds">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -137,7 +137,7 @@ color: rgb(225, 225, 225);
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="lineEdit_needsPerMonth">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -155,6 +155,9 @@ color: rgb(225, 225, 225);
            <width>100</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -170,7 +173,7 @@ color: rgb(225, 225, 225);
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="lineEdit_wantsPerMonth">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -189,6 +192,9 @@ color: rgb(225, 225, 225);
            <height>16777215</height>
           </size>
          </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
       </layout>
@@ -203,18 +209,21 @@ color: rgb(225, 225, 225);
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <widget class="QLineEdit" name="lineEdit_percentForWants">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>100</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
          </property>
         </widget>
        </item>

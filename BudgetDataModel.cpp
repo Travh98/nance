@@ -9,6 +9,7 @@ BudgetDataModel::BudgetDataModel(QObject *parent)
     m_BudgetData.insert(BudgetDataModel::RowEnum::WeeksPerYear, 52.0f);
     m_BudgetData.insert(BudgetDataModel::RowEnum::Contrib401kPercent, 3.0f);
     m_BudgetData.insert(BudgetDataModel::RowEnum::AnnualHealthInsurance, 5000.0f);
+    m_BudgetData.insert(BudgetDataModel::RowEnum::AnnualTaxPercent, 12.0f);
 
     // Recalculate on startup
     recalculateValues();
@@ -233,6 +234,11 @@ Qt::ItemFlags BudgetDataModel::flags(const QModelIndex &index) const
     }
 
     return QAbstractItemModel::flags(index) | Qt::ItemIsEditable;
+}
+
+float BudgetDataModel::getMonthlyTakeHome() const
+{
+    return m_BudgetData.value(RowEnum::MonthlyTakeHome);
 }
 
 void BudgetDataModel::recalculateValues()

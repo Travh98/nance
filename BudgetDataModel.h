@@ -48,6 +48,8 @@ public:
 
     Qt::ItemFlags flags(const QModelIndex& index) const override;
 
+    float getMonthlyTakeHome() const;
+
 private:
     QMap<RowEnum, float> m_BudgetData;
 
